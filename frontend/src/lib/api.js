@@ -2,11 +2,11 @@ import axios from "axios";
 
 export const API_URL =
     import.meta.env.VITE_API_URL ||
-    "http://localhost:5000/api";
+    "https://petmatch-backend-qi7c.onrender.com/api";
 
 export const SOCKET_URL =
     import.meta.env.VITE_SOCKET_URL ||
-    "http://localhost:5000";
+    "https://petmatch-backend-qi7c.onrender.com";
 
 const api = axios.create({
     baseURL: API_URL,
