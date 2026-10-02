@@ -1,0 +1,179 @@
+{
+  "info": {
+    "name": "PetMatch API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "petId",
+      "value": ""
+    },
+    {
+      "key": "applicationId",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/health"
+      }
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jui\",\n  \"email\": \"jui@example.com\",\n  \"password\": \"Password123\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/register"
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@petmatch.com\",\n  \"password\": \"User@123\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/login"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pets",
+      "item": [
+        {
+          "name": "List available",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/pets?status=available"
+          }
+        },
+        {
+          "name": "Filter dogs",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/pets?type=dog&city=Mumbai"
+          }
+        },
+        {
+          "name": "Get pet",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/pets/{{petId}}"
+          }
+        },
+        {
+          "name": "Create pet (admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Buddy\",\n  \"type\": \"dog\",\n  \"breed\": \"Indie\",\n  \"age\": 2,\n  \"gender\": \"Male\",\n  \"size\": \"Medium\",\n  \"city\": \"Mumbai\",\n  \"description\": \"Friendly dog\",\n  \"shelter\": \"Happy Tails\"\n}"
+            },
+            "url": "{{baseUrl}}/api/pets"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Applications",
+      "item": [
+        {
+          "name": "Create application",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"petId\": \"{{petId}}\",\n  \"phone\": \"+91 9876543210\",\n  \"homeType\": \"Apartment\",\n  \"experience\": \"I have cared for dogs before.\",\n  \"reason\": \"I want a loving companion and can provide a stable home.\"\n}"
+            },
+            "url": "{{baseUrl}}/api/applications"
+          }
+        },
+        {
+          "name": "My applications",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/applications"
+          }
+        },
+        {
+          "name": "Update status (admin)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"approved\"}"
+            },
+            "url": "{{baseUrl}}/api/applications/{{applicationId}}/status"
+          }
+        }
+      ]
+    }
+  ]
+}
