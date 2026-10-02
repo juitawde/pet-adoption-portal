@@ -2,6 +2,9 @@
 
 A light, image-rich, responsive full-stack B.Tech Backend Development case-study project.
 
+**Live Deployed Link:**
+https://pet-adoption-portal-1.onrender.com/
+
 ## Stack
 - Frontend: React + Vite + React Router + Framer Motion + Lucide
 - Backend: Node.js + Express.js
