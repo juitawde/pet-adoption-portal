@@ -8,6 +8,7 @@ PetMatch is a full-stack pet adoption platform designed to make the adoption pro
 Built using **React.js, Node.js, Express.js, MongoDB, Firebase, and Socket.io**, this project combines REST APIs, authentication, database management, and real-time communication in one application.
 
 **Live Deployed Link:**
+https://pet-adoption-portal-1.onrender.com/
 
 ---
 
@@ -169,6 +170,18 @@ Protected Controller Executes
 ```
 
 The backend uses authentication middleware to verify the user's identity and authorization middleware to restrict administrator-only operations.
+
+---
+
+## 📸 Screenshots
+
+<img width="1470" height="881" alt="Screenshot 2026-10-03 at 3 41 12 AM" src="https://github.com/user-attachments/assets/96cffb01-ed9f-4c81-95f8-5e3dd865e262" />
+
+<img width="1470" height="879" alt="Screenshot 2026-10-03 at 3 41 28 AM" src="https://github.com/user-attachments/assets/fefa8918-a246-4dde-8d6c-c7295a20dabf" />
+
+<img width="1470" height="884" alt="Screenshot 2026-10-03 at 3 42 06 AM" src="https://github.com/user-attachments/assets/a2bb724b-e20f-4b83-8a12-024e8b3d475f" />
+
+<img width="1470" height="885" alt="Screenshot 2026-10-03 at 3 42 45 AM" src="https://github.com/user-attachments/assets/973bc711-0af6-4b17-9e59-41de72a1323f" />
 
 ---
 
